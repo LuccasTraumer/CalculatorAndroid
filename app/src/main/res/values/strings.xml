@@ -11,4 +11,12 @@
     <string name="number1">1 </string>
     <string name="number0">0 </string>
 
+
+    <string name="operationSum">+</string>
+    <string name="operationSub">-</string>
+    <string name="operationDiv">/</string>
+    <string name="operationMul">x</string>
+
+    <string name="operationEquals">=</string>
+    <string name="operationClean">C</string>
 </resources>

@@ -8,16 +8,20 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="23dp"
+        android:textSize="50dp"
         android:layout_margin="20dp"
     />
-    <!-- 7 ao 9 -->
-    <LinearLayout android:orientation="horizontal"
+
+    <!-- 7 ao Sinal de Divisão -->
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+
         >
 
         <Button
@@ -36,12 +40,19 @@
             android:layout_height="match_parent"
             android:background="@color/colorPrimary"
             android:text="@string/number9"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/operationDiv"/>
     </LinearLayout>
-    <!-- 4 ao 6 -->
-    <LinearLayout android:orientation="horizontal"
+    <!-- 4 ao Sinal de Multiplicação -->
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp">
+
 
         <Button
             android:layout_width="wrap_content"
@@ -59,28 +70,65 @@
             android:layout_height="match_parent"
             android:text="@string/number6"
             android:background="@color/colorPrimary"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/operationMul"/>
     </LinearLayout>
-    <!-- 1 ao 3 -->
-    <LinearLayout android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+    <!-- 1 ao Sinal de Menos -->
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         >
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/number1"
             android:background="@color/colorPrimary"/>
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/number2"
             android:background="@color/colorPrimary"/>
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/number3"
             android:background="@color/colorPrimary"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/operationSub"/>
+    </LinearLayout>
+    <!-- Sinal de Clean ao Sinal de Soma -->
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/operationClean"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/number0"
+            android:background="@color/colorPrimary"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/operationEquals"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/operationSum"/>
+
     </LinearLayout>
 
 </LinearLayout>
