@@ -132,9 +132,13 @@ public class MainActivity extends AppCompatActivity {
                 if (tvResult == null){
                     tvResult.setText("");
                 }else{
-                    valueOne = Double.parseDouble(tvResult.getText()+"");
-                    operationSelect = "sum";
-                    tvResult.setText(null);
+                    if(tvResult.getText().charAt(0) == '.'){
+                        tvResult.setText("Value Invalid!");
+                    }else {
+                        valueOne = Double.parseDouble(tvResult.getText() + "");
+                        operationSelect = "sum";
+                        tvResult.setText(null);
+                    }
                 }
             }
         });
@@ -145,9 +149,13 @@ public class MainActivity extends AppCompatActivity {
                 if(tvResult == null){
                     tvResult.setText("");
                 }else{
-                    valueOne = Double.parseDouble(tvResult.getText()+"");
-                    operationSelect = "sub";
-                    tvResult.setText(null);
+                    if(tvResult.getText().charAt(0) == '.'){
+                        tvResult.setText("Invalid Value");
+                    }else {
+                        valueOne = Double.parseDouble(tvResult.getText() + "");
+                        operationSelect = "sub";
+                        tvResult.setText(null);
+                    }
                 }
             }
         });
@@ -158,9 +166,13 @@ public class MainActivity extends AppCompatActivity {
                 if(tvResult == null){
                     tvResult.setText("");
                 }else{
-                    valueOne = Double.parseDouble(tvResult.getText()+"");
-                    operationSelect = "div";
-                    tvResult.setText(null);
+                    if(tvResult.getText().charAt(0) == '.'){
+                        tvResult.setText("Invalid Value");
+                    }else {
+                        valueOne = Double.parseDouble(tvResult.getText() + "");
+                        operationSelect = "div";
+                        tvResult.setText(null);
+                    }
                 }
             }
         });
@@ -170,9 +182,13 @@ public class MainActivity extends AppCompatActivity {
                 if(tvResult == null){
                     tvResult.setText("");
                 }else{
-                    valueOne = Double.parseDouble(tvResult.getText()+"");
-                    operationSelect = "mul";
-                    tvResult.setText(null);
+                    if(tvResult.getText().charAt(0) == '.'){
+                        tvResult.setText("Invalid Value!");
+                    }else {
+                        valueOne = Double.parseDouble(tvResult.getText() + "");
+                        operationSelect = "mul";
+                        tvResult.setText(null);
+                    }
                 }
             }
         });
@@ -183,15 +199,10 @@ public class MainActivity extends AppCompatActivity {
                 tvResult.setText("");
                 valueOne = 0;
                 valueTwo = 0;
+                operationSelect = "";
             }
         });
 
-        btnEquals.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         btnEquals.setOnClickListener(new View.OnClickListener() {
             @Override
