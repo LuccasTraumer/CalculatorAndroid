@@ -12,6 +12,8 @@
     <string name="number0">0 </string>
 
 
+    <string name="btnDOt">.</string>
+
     <string name="operationSum">+</string>
     <string name="operationSub">-</string>
     <string name="operationDiv">/</string>
