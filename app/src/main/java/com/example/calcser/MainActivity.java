@@ -198,22 +198,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 valueTwo = Double.parseDouble(tvResult.getText()+"");
 
-                if(operationSelect.equals("+")){
+                if(operationSelect.equals("sum")){
                     result = valueOne + valueTwo;
                     tvResult.setText(result+"");
                     operationSelect="";
                 }
-                else if(operationSelect.equals("-")){
+                else if(operationSelect.equals("sub")){
                     result = valueOne -valueTwo;
                     tvResult.setText(result+"");
                     operationSelect="";
                 }
-                else if(operationSelect.equals("*")){
+                else if(operationSelect.equals("mul")){
                     result = valueOne*valueTwo;
                     tvResult.setText(result+"");
                     operationSelect="";
                 }
-                else if(operationSelect.equals("/")){
+                else if(operationSelect.equals("div")){
                     result = valueOne / valueTwo;
                     tvResult.setText(result+"");
                     operationSelect="";
