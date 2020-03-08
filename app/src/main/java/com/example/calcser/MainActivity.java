@@ -132,12 +132,23 @@ public class MainActivity extends AppCompatActivity {
                 if (tvResult == null){
                     tvResult.setText("");
                 }else{
-                    if(tvResult.getText().charAt(0) == '.'){
+                    if(tvResult.getText().charAt(0) == '.') {
                         tvResult.setText("Value Invalid!");
                     }else {
-                        valueOne = Double.parseDouble(tvResult.getText() + "");
-                        operationSelect = "sum";
-                        tvResult.setText(null);
+                        boolean isValid = true;
+                        for(int i=1; i <= tvResult.getText().length()-1;i++){
+                            if(tvResult.getText().charAt(i-1) == '.' && tvResult.getText().charAt(i) == '.'){
+                                tvResult.setText("Invalid Number");
+                                isValid = false;
+                            }
+                        }
+                        if(isValid) {
+                            valueOne = Double.parseDouble(tvResult.getText() + "");
+                            operationSelect = "sum";
+                            tvResult.setText(null);
+                        }else{
+                            tvResult.setText("Number is not valid !");
+                        }
                     }
                 }
             }
