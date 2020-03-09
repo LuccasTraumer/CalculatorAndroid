@@ -163,9 +163,20 @@ public class MainActivity extends AppCompatActivity {
                     if(tvResult.getText().charAt(0) == '.'){
                         tvResult.setText("Invalid Value");
                     }else {
-                        valueOne = Double.parseDouble(tvResult.getText() + "");
-                        operationSelect = "sub";
-                        tvResult.setText(null);
+                        boolean isValid = false;
+
+                        for(int i=1; i<= tvResult.getText().length()-1;i++){
+                            if(tvResult.getText().charAt(i-1) == '.' && tvResult.getText().charAt(i) == '.'){
+                                isValid =false;
+                            }
+                        }
+                        if(isValid) {
+                            valueOne = Double.parseDouble(tvResult.getText() + "");
+                            operationSelect = "sub";
+                            tvResult.setText(null);
+                        }else{
+                            tvResult.setText("Invalid Number");
+                        }
                     }
                 }
             }
@@ -180,9 +191,19 @@ public class MainActivity extends AppCompatActivity {
                     if(tvResult.getText().charAt(0) == '.'){
                         tvResult.setText("Invalid Value");
                     }else {
-                        valueOne = Double.parseDouble(tvResult.getText() + "");
-                        operationSelect = "div";
-                        tvResult.setText(null);
+                        boolean isValid = true;
+                        for(int i=1; i<= tvResult.getText().length()-1;i++){
+                            if(tvResult.getText().charAt(i-1) == '.' && tvResult.getText().charAt(i) == '.'){
+                                isValid = false;
+                            }
+                        }
+                        if(isValid) {
+                            valueOne = Double.parseDouble(tvResult.getText() + "");
+                            operationSelect = "div";
+                            tvResult.setText(null);
+                        }else{
+                            tvResult.setText("Invalid Number has much dot");
+                        }
                     }
                 }
             }
@@ -196,9 +217,19 @@ public class MainActivity extends AppCompatActivity {
                     if(tvResult.getText().charAt(0) == '.'){
                         tvResult.setText("Invalid Value!");
                     }else {
-                        valueOne = Double.parseDouble(tvResult.getText() + "");
-                        operationSelect = "mul";
-                        tvResult.setText(null);
+                        boolean isValid = true;
+                        for(int i=1; i <= tvResult.getText().length()-1; i++){
+                            if(tvResult.getText().charAt(i-1) == '.' && tvResult.getText().charAt(i) == '.'){
+                                isValid = false;
+                            }
+                        }
+                        if(isValid) {
+                            valueOne = Double.parseDouble(tvResult.getText() + "");
+                            operationSelect = "mul";
+                            tvResult.setText(null);
+                        }else{
+                            tvResult.setText("Number invalid has much dot");
+                        }
                     }
                 }
             }
@@ -218,30 +249,36 @@ public class MainActivity extends AppCompatActivity {
         btnEquals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                valueTwo = Double.parseDouble(tvResult.getText()+"");
+                boolean isValid = true;
+                for(int i=1; i <= tvResult.getText().length()-1;i++){
+                    if(tvResult.getText().charAt(i-1) == '.' && tvResult.getText().charAt(i) == '.'){
+                        isValid = false;
+                    }
+                }
+                if (!isValid) {
+                    tvResult.setText("Number invalid!");
+                }else {
+                    valueTwo = Double.parseDouble(tvResult.getText() + "");
 
-                if(operationSelect.equals("sum")){
-                    result = valueOne + valueTwo;
-                    tvResult.setText(result+"");
-                    operationSelect="";
-                }
-                else if(operationSelect.equals("sub")){
-                    result = valueOne -valueTwo;
-                    tvResult.setText(result+"");
-                    operationSelect="";
-                }
-                else if(operationSelect.equals("mul")){
-                    result = valueOne*valueTwo;
-                    tvResult.setText(result+"");
-                    operationSelect="";
-                }
-                else if(operationSelect.equals("div")){
-                    result = valueOne / valueTwo;
-                    tvResult.setText(result+"");
-                    operationSelect="";
-                }
-                else {
-                    tvResult.setText("INVALID OPERATION");
+                    if (operationSelect.equals("sum")) {
+                        result = valueOne + valueTwo;
+                        tvResult.setText(result + "");
+                        operationSelect = "";
+                    } else if (operationSelect.equals("sub")) {
+                        result = valueOne - valueTwo;
+                        tvResult.setText(result + "");
+                        operationSelect = "";
+                    } else if (operationSelect.equals("mul")) {
+                        result = valueOne * valueTwo;
+                        tvResult.setText(result + "");
+                        operationSelect = "";
+                    } else if (operationSelect.equals("div")) {
+                        result = valueOne / valueTwo;
+                        tvResult.setText(result + "");
+                        operationSelect = "";
+                    } else {
+                        tvResult.setText("INVALID OPERATION");
+                    }
                 }
             }
         });
