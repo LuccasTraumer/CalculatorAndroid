@@ -284,4 +284,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+    }
 }
